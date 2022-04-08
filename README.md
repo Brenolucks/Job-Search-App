@@ -1,6 +1,6 @@
-# job_search_app
+# Job Search App
 
-A new Flutter project.
+This project is a clone of a dribbble UI/UX design for my studies using flutter and dart.
 
 ## Getting Started
 
