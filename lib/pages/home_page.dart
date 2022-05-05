@@ -189,72 +189,122 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Stack(
+                  clipBehavior: Clip.none,
                   children: <Widget>[
                     //third
                     Container(
-                      width: 300,
+                      width: 280,
                       height: 12.5,
-                      margin: EdgeInsets.fromLTRB(40.0, 2.5, 0.0, 0.0),
+                      margin: EdgeInsets.only(top: 2.5),
                       decoration: BoxDecoration(
                         color: Color.fromRGBO(182, 221, 207, 10),
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    //second
-                    Container(
-                      width: 320,
-                      height: 25,
-                      margin: EdgeInsets.fromLTRB(30.0, 10.0, 0.0, 0.0),
-                      decoration: BoxDecoration(
-                        color: Color.fromRGBO(127, 195, 188, 10),
-                        borderRadius: BorderRadius.circular(10),
+                    Positioned(
+                      right: -15,
+                      child: Container(
+                        width: 310,
+                        height: 25,
+                        margin: EdgeInsets.fromLTRB(30.0, 10.0, 0.0, 0.0),
+                        decoration: BoxDecoration(
+                          color: Color.fromRGBO(127, 195, 188, 10),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                     ),
-                    //main
-                    Container(
-                      margin: EdgeInsets.symmetric(
-                        horizontal: 20.0,
-                        vertical: 20.0,
-                      ),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 170.0,
-                        vertical: 70.0,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color.fromRGBO(73, 170, 160, 10),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Column(
-                        children: [
-                          Container(
-                            child: Center(
-                              heightFactor: 0.0,
-                              widthFactor: 0.0,
-                              child: Icon(
-                                Icons.reorder_rounded,
-                                size: 33.0,
-                                color: Colors.grey[650],
-                              ),
-                            ),
-                          ),
-                          Container(
-                            child: Center(
-                              heightFactor: 0.0,
-                              widthFactor: 0.0,
-                              child: Icon(
-                                Icons.arrow_forward_ios,
-                                size: 33.0,
-                                color: Colors.grey[650],
-                              ),
-                            ),
-                          ),
-                        ],
+                    Positioned(
+                      right: -50,
+                      child: Container(
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 20.0,
+                          vertical: 20.0,
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 170.0,
+                          vertical: 70.0,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Color.fromRGBO(73, 170, 160, 10),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                     ),
                   ],
                 ),
               ],
-            )
+            ),
+            SizedBox(
+              height: 180,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text(
+                    'Recommendations',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: textColor,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0.0, 5.0, 20.0, 0.0),
+                  child: Text(
+                    'See all',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 20,
+                      fontWeight: FontWeight.w100,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              child: Expanded(
+                child: GridView.count(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 20,
+                  ),
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 20,
+                  crossAxisCount: 2,
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.teal[100],
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.teal[200],
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.teal[100],
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.teal[200],
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
